@@ -2,7 +2,7 @@ function calculateSum() {
   const number = parseInt(document.getElementById("number").value);
 
   if (isNaN(number) || number <= 0) {
-      document.getElementById("result").textContent = "Please enter a positive integer.";
+      document.getElementById("result").textContent = "Enter a positive integer.";
       return;
   }
 

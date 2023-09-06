@@ -6,7 +6,7 @@ function calculateDistance() {
   const [x2, y2] = point2Input.split(',').map(parseFloat);
 
   if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
-      document.getElementById("result").textContent = "Invalid input. Please enter valid coordinates.";
+      document.getElementById("result").textContent = "Invalid input. Enter valid coordinates.";
       return;
   }
 

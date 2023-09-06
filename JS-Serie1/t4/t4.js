@@ -2,7 +2,7 @@ function calculateGrade() {
   const score = parseInt(document.getElementById("score").value);
 
   if (isNaN(score) || score < 0 || score > 100) {
-      document.getElementById("result").textContent = "Invalid score. Please enter a valid score between 0 and 100.";
+      document.getElementById("result").textContent = "Enter a valid score between 0 and 100.";
   } else if (score >= 0 && score <= 39) {
       document.getElementById("result").textContent = "Your grade is 0.";
   } else if (score >= 40 && score <= 51) {
