@@ -1,0 +1,3 @@
+const restaurantRow = () => {};
+
+export {restaurantRow};
