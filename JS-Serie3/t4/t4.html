@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant List</title>
+</head>
+
+<body>
+  <h1>Restaurant List</h1>
+  <ul id="restaurantList"></ul>
+
+  <script src="t4.js"></script>
+  <script>
+    const userLat = 60.171558;
+    const userLon = 25.049299;
+
+    restaurants.sort((a, b) => {
+      const distanceA = calculateDistance(userLat, userLon, a.location.coordinates[1], a.location.coordinates[0]);
+      const distanceB = calculateDistance(userLat, userLon, b.location.coordinates[1], b.location.coordinates[0]);
+      return distanceA - distanceB;
+    });
+
+    const restaurantList = document.getElementById('restaurantList');
+    for (const restaurant of restaurants) {
+      const listItem = document.createElement('li');
+      listItem.textContent = `Name: ${restaurant.name}, Address: ${restaurant.address}`;
+      restaurantList.appendChild(listItem);
+    }
+  </script>
+</body>
+
+</html>
