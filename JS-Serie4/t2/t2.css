@@ -10,17 +10,33 @@ table {
   border-spacing: 0;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-th {
+th, td {
   background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid #ccc;
   font-weight: normal;
   padding: 0.5em 1em;
   text-align: left;
 }
 
-td {
-  border-bottom: 1px solid #ccc;
-  padding: 0.5em 1em;
+.highlight {
+  background-color: yellow; /* You can change this color to whatever you prefer */
+}
+
+dialog {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  max-width: 90%; /* Ensures the dialog is responsive */
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
 }

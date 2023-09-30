@@ -1,53 +1,84 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 15rem;
+  width: auto;  /* Changed to auto to adapt to content width */
+  max-width: 400px;  /* Set a max-width to prevent stretching on wider screens */
 }
 
 li {
   border: 1px solid #000;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;  /* Changed to space-between for better layout */
   line-height: 3rem;
+  padding: 0 10px;  /* Added padding for visual spacing */
+  margin-bottom: 5px;  /* Added margin for spacing between items */
+  background-color: #fff;  /* Added background color for better visibility */
 }
 
 label {
-  display: block;
-  width: 100%;
-  padding-left: 1rem;
+  flex-grow: 1;  /* Added to let label take the available space */
+  padding: 0 10px;  /* Added for visual spacing */
 }
 
 li button {
-  width: 2rem;
-  height: 3rem;
   background-color: rgb(255, 0, 0);
   color: #fff;
   border: none;
   cursor: pointer;
-  position: absolute;
+  /* Removed position: absolute to align the button correctly */
 }
 
-li input {
-  position: absolute;
-  margin: 1rem 3rem;
+li input[type="checkbox"] {
   cursor: pointer;
+  margin-right: 10px;  /* Adjusted margin for alignment */
 }
 
 li input[type='checkbox']:checked + label {
-  background-color: rgb(146, 208, 136);
-  font-weight: bold;
+  text-decoration: line-through;  /* Added line-through effect to represent completed tasks */
+  color: #888;  /* Dimmed the color of completed tasks */
 }
 
 .add-btn {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
+  margin: 20px 0;
+  padding: 10px 20px;
   background-color: rgb(80, 80, 168);
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 5px;  /* Added for rounded corners */
 }
+
+dialog {
+  padding: 20px;
+  border: none;
+  border-radius: 5px; /* Added for rounded corners */
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Added shadow for better visibility */
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;  /* Added for rounded corners */
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: rgb(80, 80, 168);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;  /* Added for rounded corners */
+}
+
