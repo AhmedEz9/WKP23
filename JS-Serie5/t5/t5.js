@@ -4,7 +4,7 @@ const table = document.querySelector('table');
 const dialog = document.querySelector('dialog');
 const url = 'https://sodexo-webscrape-r73sdlmfxa-lz.a.run.app/api/v1/';
 
-// Get restaurant data from API
+
 const getData = async () => {
     try {
         const res = await fetch(`${url}restaurants`);
@@ -96,5 +96,4 @@ async function createTodaysMenu(restaurant) {
     }
 }
 
-// Initialize
 getData();
