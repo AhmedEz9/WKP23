@@ -22,7 +22,7 @@ th, td {
 }
 
 .highlight {
-  background-color: yellow; /* You can change this color to whatever you prefer */
+  background-color: yellow;
 }
 
 dialog {
@@ -34,7 +34,7 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  max-width: 90%; /* Ensures the dialog is responsive */
+  max-width: 90%;
 }
 
 dialog::backdrop {
