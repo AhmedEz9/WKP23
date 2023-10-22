@@ -1,4 +1,3 @@
-// main.js
 'use strict';
 
 import { baseUrl } from './variables.js';
@@ -54,5 +53,4 @@ const createModal = async (restaurant) => {
     }
 };
 
-// Initially fetching the restaurant data when the application loads
 getData();

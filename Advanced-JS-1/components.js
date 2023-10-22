@@ -1,4 +1,3 @@
-// components.js
 export const restaurantRow = (restaurant) => {
   const { name, address } = restaurant;
   const tr = document.createElement('tr');
