@@ -8,4 +8,4 @@ interface Course {
     courses: Course[];
   }
 
-  export default Menu;
+  export type { Menu, Course };

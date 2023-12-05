@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Restaurants</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <script type="module" src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Theme Switch -->
+  <div class="theme-switch">
+    <input type="checkbox" id="theme-switch-checkbox" />
+    <label for="theme-switch-checkbox" class="theme-switch-label">
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- Main Title -->
+  <h1 class="main-title">Student Restaurants</h1>
+  <h2 class="sub-title">Your Daily Dose of Delicious</h2>
+
+  <!-- Filter Buttons -->
+  <div class="button-group">
+    <button class="btn" id="sodexo">Sodexo</button>
+    <button class="btn" id="compass">Compass Group</button>
+    <button class="btn" id="reset">Show All</button>
+  </div>
+
+  <!-- Restaurant Table -->
+  <table class="restaurant-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Restaurants will be added here -->
+    </tbody>
+  </table>
+
+  <!-- Restaurant Details Dialog -->
+  <dialog class="restaurant-dialog">
+    <!-- Restaurant details and menu will be displayed here -->
+  </dialog>
+
+  <!-- Login/Registration Form -->
+  <div id="login-form" class="form-container">
+    <h2>Login / Register</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="login-btn">Login/Register</button>
+  </div>
+
+  <!-- Profile Management -->
+  <div id="profile-management" class="form-container" style="display:none;">
+    <h2>Profile Management</h2>
+    <input type="file" id="profile-picture" accept="image/*">
+    <select id="favorite-restaurant">
+      <!-- Options will be populated from JavaScript -->
+    </select>
+    <button id="save-profile">Save Profile</button>
+  </div>
+
+</body>
+</html>

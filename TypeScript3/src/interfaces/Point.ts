@@ -1,6 +1,6 @@
 interface Point {
-    type: string;
-    coordinates: [number, number];
+    latitude: number;
+    longitude: number;
   }
 
-  export default Point;
+  export type { Point };

@@ -1,15 +1,17 @@
-interface Restaurant {
+interface Location {
+    coordinates: [number, number];
+    type: string;
+  }
+
+  interface Restaurant {
     _id: string;
     name: string;
     address: string;
+    city: string;
+    postalCode: string;
+    phone: string;
     company: string;
-    location: {
-      type: string;
-      coordinates: [number, number];
-    };
-    city?: string;
-    postalCode?: string;
-    phone?: string;
+    location: Location;
   }
 
-  export default Restaurant;
+  export type { Restaurant };

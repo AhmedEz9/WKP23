@@ -1,7 +1,7 @@
-import Restaurant from './interfaces/Restaurant';
-import Menu from './interfaces/Menu';
+import { Restaurant } from './interfaces/Restaurant';
+import { Menu, Course } from './interfaces/Menu';
 
-const restaurantRow = (restaurant: Restaurant): HTMLTableRowElement => {
+const restaurantRow = (restaurant: Restaurant): HTMLElement => {
   const { name, address, company } = restaurant;
   const tr = document.createElement('tr');
   const nameCell = document.createElement('td');
@@ -29,27 +29,25 @@ const restaurantModal = (restaurant: Restaurant, menu: Menu): string => {
         <th>Price</th>
       </tr>
     `;
-
-  menu.courses.forEach((course) => {
+  menu.courses.forEach((course: Course) => {
     const { name, diets, price } = course;
     html += `
-      <tr>
-        <td>${name}</td>
-        <td>${diets?.join(', ') ?? ' - '}</td>
-        <td>${price ?? ' - '}</td>
-      </tr>
-    `;
+          <tr>
+            <td>${name}</td>
+            <td>${diets?.join(', ') ?? ' - '}</td>
+            <td>${price ?? ' - '}</td>
+          </tr>
+          `;
   });
-
   html += '</table>';
   return html;
 };
 
 const errorModal = (message: string): string => {
   const html = `
-    <h3>Error</h3>
-    <p>${message}</p>
-  `;
+        <h3>Error</h3>
+        <p>${message}</p>
+        `;
   return html;
 };
 
