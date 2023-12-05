@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #4caf50; /* Green */
-  --secondary-color: #ff9800; /* Orange */
+  --primary-color: rgb(255,165,0); /* Green */
+  --secondary-color: rgb(7, 14, 151); /* Orange */
   --background-color: #f5f5f5;
   --text-color: #333;
   --modal-background: #fff;
