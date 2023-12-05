@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+          font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+        }
+        .sidebar {
+            width: 200px; float: left; height: 100vh;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
+            color: #333;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            font-size: 24px; text-align: center;
+        }
+        .sidebar a {
+            color: #333; text-decoration: none; display: block; padding: 10px; margin: 5px 0; border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover { background: #fdd835; color: white; }
+        .content {
+            margin-left: 200px; padding: 20px; background: rgba(255, 255, 255, 0.9);
+            display: flex; justify-content: center; align-items: center; flex-direction: column;
+            min-height: calc(100vh - 40px);
+        }
+        h1, h2 { font-family: 'Permanent Marker', cursive; color: #333; }
+        table { width: 100%; max-width: 600px; border-collapse: collapse; background: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f2f2f2; }
+        .form-container {
+            background: white; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border-radius: 5px;
+            margin-top: 20px; width: 100%; max-width: 600px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ddd; border-radius: 4px;
+        }
+        button {
+            background-color: #fdd835; color: white; border: none; padding: 10px 15px; border-radius: 5px;
+            transition: all 0.3s ease; font-size: 16px;
+        }
+        button:hover { background-color: #fbc02d; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+        button:active { transform: translateY(1px); }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu Admin</h2>
+        <a href="#">Dashboard</a>
+        <a href="#">Menu Items</a>
+        <a href="#">Orders</a>
+        <a href="#">Settings</a>
+    </div>
+    <div class="content">
+        <h1>Manage Menu</h1>
+        <div class="menu-management">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Dish Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Menu items will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="form-container">
+            <h2>Add/Edit Menu Item</h2>
+            <form id="menuItemForm">
+                <input type="text" id="dishName" name="dishName" placeholder="Dish Name" required>
+                <input type="number" id="price" name="price" placeholder="Price" required>
+                <button type="submit">Save Menu Item</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function fetchMenuItems() {
+            // Dummy data - replace with your API call
+            const menuItems = [
+                { id: 1, name: 'Margherita Pizza', price: 12.99 },
+                { id: 2, name: 'Pasta Carbonara', price: 14.99 }
+            ];
+
+            const menuTable = document.querySelector('.menu-management tbody');
+            menuItems.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                `;
+                menuTable.appendChild(row);
+            });
+        }
+
+        document.getElementById('menuItemForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const newMenuItem = {
+                name: document.getElementById('dishName').value,
+                price: parseFloat(document.getElementById('price').value)
+            };
+
+            console.log('New Menu Item:', newMenuItem);
+            // Add  API call here to save the menu item
+
+            // Reset form
+            document.getElementById('menuItemForm').reset();
+        });
+
+        document.addEventListener('DOMContentLoaded', fetchMenuItems);
+    </script>
+</body>
+</html>

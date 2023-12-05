@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #4caf50;
-  --secondary-color: #ff9800;
+  --primary-color: #4caf50; /* Green */
+  --secondary-color: #ff9800; /* Orange */
   --background-color: #f5f5f5;
   --text-color: #333;
   --modal-background: #fff;
@@ -21,12 +21,12 @@ body {
 
 .main-title {
   font-size: 2.5em;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Green for main title */
 }
 
 .sub-title {
   font-size: 1.5em;
-  color: var(--secondary-color);
+  color: var(--secondary-color); /* Orange for sub-title */
 }
 
 .theme-switch {
@@ -40,7 +40,7 @@ body {
   width: 60px;
   height: 34px;
   position: relative;
-  background-color: #ccc;
+  background-color: var(--secondary-color); /* Orange for theme switch */
   border-radius: 34px;
   cursor: pointer;
 }
@@ -58,6 +58,7 @@ body {
 
 #theme-switch-checkbox:checked + .theme-switch-label .slider {
   transform: translateX(26px);
+  background-color: var(--primary-color); /* Green when switched */
 }
 
 #theme-switch-checkbox {
@@ -67,7 +68,7 @@ body {
 }
 
 .btn {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color); /* Orange for buttons */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -78,53 +79,75 @@ body {
 }
 
 .btn:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color); /* Green on hover */
 }
 
 .restaurant-table {
   margin: 20px auto;
   border-collapse: collapse;
+  border: 1px solid var(--secondary-color); /* Orange border for the table */
 }
 
 .restaurant-table th, .restaurant-table td {
-  border: 1px solid var(--text-color);
   padding: 10px 15px;
+  border: 1px solid var(--secondary-color); /* Orange borders for cells */
 }
 
 .restaurant-table th {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color); /* Orange background for headers */
   color: white;
+}
+
+.restaurant-table td {
+  background-color: #fff5e6; /* Light orange background for table cells */
 }
 
 .restaurant-dialog {
   background-color: var(--modal-background);
 }
 
-/* Dark Theme Styles */
-body.dark {
-  --background-color: #121212;
-  --text-color: #fff;
-  --primary-color: #3700B3;
-  --secondary-color: #03DAC6;
-  --modal-background: #333;
-}
-
 /* Form Container Styles */
 .form-container {
   margin: 20px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--secondary-color); /* Orange for form borders */
   border-radius: 5px;
 }
 
 .form-container h2 {
   margin-top: 0;
+  color: var(--primary-color); /* Green for form headers */
 }
 
-.form-container input, .form-container select, .form-container button {
+.form-container input, .form-container select {
   margin-top: 10px;
   width: 100%;
   padding: 10px;
+  border: 1px solid var(--secondary-color); /* Orange for input borders */
 }
 
-/* Add more styles as needed */
+.form-container button {
+  background-color: var(--primary-color); /* Green for form buttons */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: var(--secondary-color); /* Orange on hover */
+}
+
+/* Dark Theme Styles */
+body.dark {
+  --background-color: #121212;
+  --text-color: #000000;
+  --primary-color: rgb(231, 145, 15);
+  --secondary-color: #03DAC6;
+  --modal-background: #333;
+}
+
+/* Additional Styles */
+/* Add any additional styles you might need */
